@@ -1,3 +1,0 @@
-[submodule "Oracle/terraform-oci-compute-instance"]
-	path = Oracle/terraform-oci-compute-instance
-	url = github.com:oracle-terraform-modules/terraform-oci-compute-instance.git
