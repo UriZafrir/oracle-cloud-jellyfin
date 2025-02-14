@@ -3,6 +3,8 @@ terraform {
   required_providers {
     oci = {
       version = ">= 4.0.0"
+      region="il-jerusalem-1"
     }
   }
+
 }

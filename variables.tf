@@ -42,3 +42,28 @@ variable "boot_volume_backup_policy" {
   type        = string
   description = "Backup policy for the boot volume. Valid values: disabled, gold, silver or bronze"
 }
+
+variable "tenancy_id" {
+  type        = string
+  description = "OCID of the tenancy"
+}
+
+variable "vcn_display_name" {
+  type        = string
+  description = "Display name for the VCN"
+}
+
+variable "vcn_cidr" {
+  type        = string
+  description = "CIDR block for the VCN"
+}
+
+variable "vcn_label_prefix" {
+  type        = string
+  description = "Label prefix for VCN resources"
+}
+
+variable "vcn_cidrs" {
+  type        = list(string)
+  description = "List of CIDR blocks for the VCN"
+}

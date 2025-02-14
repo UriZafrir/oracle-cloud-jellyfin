@@ -13,3 +13,18 @@
 #   instance_state             = var.instance_state # RUNNING or STOPPED
 #   boot_volume_backup_policy  = var.boot_volume_backup_policy # disabled, gold, silver or bronze
 # }
+
+
+module "oci_vcn" {
+  source                  = "./Oracle/terraform-oci-vcn"
+  tenancy_id              = var.tenancy_id
+  compartment_id          = var.compartment_ocid
+  label_prefix            = var.vcn_label_prefix
+  vcn_cidrs               = var.vcn_cidrs
+  create_internet_gateway = true
+
+  subnets = {
+    sub1 = { name = "subnet1", cidr_block = "10.0.0.0/24" }
+    sub2 = { name = "subnet2", cidr_block = "10.0.1.0/24" }
+  }
+}
