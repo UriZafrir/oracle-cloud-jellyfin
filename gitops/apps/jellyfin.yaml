@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jellyfin
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://utkuozdemir.org/helm-charts
+      chart: jellyfin
+      targetRevision: 2.0.0
+      helm:
+        releaseName: jellyfin
+        valuesObject:
+          image:
+            tag: latest
+          service:
+            type: NodePort
+          persistence:
+            data:
+              # enabled: true
+              # storageClass: local-path
+              # size: 20Gi
+              enabled: true
+              isPvc: false
+              customVolume:
+                hostPath:
+                  path: /opt/jellyfin-data
+          # podSecurityContext:
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   fsGroup: 1000
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: jellyfin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
