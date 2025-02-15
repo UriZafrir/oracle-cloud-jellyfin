@@ -29,6 +29,8 @@ spec:
           additionalPorts:
             - name: tcp-8920
               containerPort: 8920
+              protocol: TCP
+              hostPort: 8920
           # podSecurityContext:
           #   runAsUser: 1000
           #   runAsGroup: 1000
