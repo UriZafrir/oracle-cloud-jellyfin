@@ -17,8 +17,10 @@ variable "vcn_cidrs" {
   type        = list(string)
   description = "List of CIDR blocks for the VCN"
 }
-
-
+variable "user_ocid" {
+  type        = string
+  description = "User OCID for OCI provider"
+}
 # variable "instance_display_name" {
 #   type        = string
 #   description = "Display name for the compute instance"
