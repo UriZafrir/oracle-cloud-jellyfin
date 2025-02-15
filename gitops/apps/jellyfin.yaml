@@ -26,6 +26,9 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-data
+          additionalPorts:
+            - name: tcp-8920
+              containerPort: 8920
           # podSecurityContext:
           #   runAsUser: 1000
           #   runAsGroup: 1000
