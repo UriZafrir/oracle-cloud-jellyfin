@@ -64,20 +64,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_ssh" {
 #   stateless = false
 # }
 
-resource "oci_core_network_security_group_security_rule" "ingress_rule_custom" {
-  network_security_group_id = oci_core_network_security_group.nsg-1.id
-  direction                 = "INGRESS"
-  protocol                  = "6" # TCP
-  source                    = var.allowed_cidr
-  source_type               = "CIDR_BLOCK"
-  tcp_options {
-    destination_port_range {
-      min = 8096
-      max = 8096
-    }
-  }
-  stateless = false
-}
+
 
 resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30443" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
@@ -94,6 +81,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30
   stateless = false
 }
 
+
 resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_8096" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
@@ -103,7 +91,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   tcp_options {
     destination_port_range {
       min = 8096
-      max = 8096
+      max = 8920
     }
   }
   stateless = false
@@ -118,7 +106,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   tcp_options {
     destination_port_range {
       min = 8096
-      max = 8096
+      max = 8920
     }
   }
   stateless = false
@@ -133,7 +121,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   tcp_options {
     destination_port_range {
       min = 8096
-      max = 8096
+      max = 8920
     }
   }
   stateless = false

@@ -54,6 +54,15 @@ wget -P ~/.config/k9s/skins/ https://raw.githubusercontent.com/derailed/k9s/refs
 sed -i '/ui:/a\    skin: transparent' ~/.config/k9s/config.yaml
 k9s
 ```
+jellyfin:
+```
+apt update && apt install net-tools && netstat -ln
+#create certificate using 
+openssl pkcs12 -export -out jellyfin.oci-cloud.com.pfx -inkey jellyfin.oci-cloud.com.key -in jellyfin.oci-cloud.com.crt -passout pass:123456
+change owner of file to jellyfin:jellyfin
+then allow https in dashboard-networking and enter the password
+then restart
+```
 
 
 
