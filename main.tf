@@ -94,7 +94,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30
   stateless = false
 }
 
-resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_31625" {
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_8096" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
@@ -102,14 +102,14 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_31
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
-      min = 31625
-      max = 31625
+      min = 8096
+      max = 8096
     }
   }
   stateless = false
 }
 
-resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_31625_doron" {
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_8096_doron" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
@@ -117,23 +117,23 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_31
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
-      min = 31625
-      max = 31625
+      min = 8096
+      max = 8096
     }
   }
   stateless = false
 }
 
-resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_31625_shira" {
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_8096_shira" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
-  source                    = var.allowed_cidr_doron
+  source                    = var.allowed_cidr_shira
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
-      min = 31625
-      max = 31625
+      min = 8096
+      max = 8096
     }
   }
   stateless = false
