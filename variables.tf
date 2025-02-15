@@ -51,3 +51,8 @@ variable "shape" {
   type        = string
   description = "Shape of the instance"
 }
+
+variable "allowed_cidr" {
+  type        = string
+  description = "CIDR block allowed to access restricted ports (SSH, K8s API, 8096)"
+}
