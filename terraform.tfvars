@@ -14,5 +14,6 @@ ssh_public_keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICjfyR0TesyI0zS
 shape                     = "VM.Standard.A1.Flex"
 
 allowed_cidr = "87.68.255.118/32"  # Replace with your specific IP/CIDR for better security
-
+allowed_cidr_doron = "89.139.22.147/32"  # Replace with your specific IP/CIDR for better security
+allowed_cidr_shira = "77.125.195.34/32"
 

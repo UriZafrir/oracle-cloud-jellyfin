@@ -26,6 +26,11 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-data
+          hostPort:
+            # -- Use host port for the application
+            enabled: true
+            # -- Host port to bind to
+            port: 8096
           additionalPorts:
             - name: tcp-8920
               containerPort: 8920

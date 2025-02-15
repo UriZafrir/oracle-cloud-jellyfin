@@ -56,3 +56,14 @@ variable "allowed_cidr" {
   type        = string
   description = "CIDR block allowed to access restricted ports (SSH, K8s API, 8096)"
 }
+
+
+variable "allowed_cidr_doron" {
+  type        = string
+  description = "CIDR block allowed to access restricted ports (SSH, K8s API, 8096)"
+}
+
+variable "allowed_cidr_shira" {
+  type        = string
+  description = "CIDR block allowed to access restricted ports (SSH, K8s API, 8096)"
+}
