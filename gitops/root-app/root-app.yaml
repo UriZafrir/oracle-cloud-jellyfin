@@ -10,7 +10,7 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://github.com/UriZafrir/home-lab-cluster.git
+    repoURL: https://github.com/UriZafrir/oracle-cloud-jellyfin.git
     targetRevision: HEAD
     path: ./gitops/apps
   # Destination cluster and namespace to deploy the application

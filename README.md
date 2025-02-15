@@ -29,8 +29,9 @@ bash
 
 install argocd
 ```
+kubectl create ns argocd
 helm repo add argo https://argoproj.github.io/argo-helm
-helm install argo-cd argo/argo-cd --version 7.8.2 --set server.service.type=NodePort --debug
+helm install argo-cd argo/argo-cd --version 7.8.2 -n argocd --set server.service.type=NodePort --debug
 
 #https://151.145.82.131:30443/
 #kubectl -n default get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
@@ -42,6 +43,16 @@ sudo vgextend ocivolume /dev/sdb
 sudo lvextend -l +100%FREE /dev/ocivolume/root
 sudo xfs_growfs /
 df -h /
+```
+
+k9s
+```
+wget https://github.com/derailed/k9s/releases/download/v0.32.7/k9s_Linux_arm64.tar.gz
+tar xzf k9s_Linux_arm64.tar.gz
+mv k9s /usr/local/bin
+wget -P ~/.config/k9s/skins/ https://raw.githubusercontent.com/derailed/k9s/refs/heads/master/skins/transparent.yaml
+sed -i '/ui:/a\    skin: transparent' ~/.config/k9s/config.yaml
+k9s
 ```
 
 
