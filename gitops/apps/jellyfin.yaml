@@ -13,7 +13,7 @@ spec:
         releaseName: jellyfin
         valuesObject:
           image:
-            tag: arm64v8-latest
+            tag: latest
           service:
             type: NodePort
           persistence:

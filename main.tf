@@ -72,8 +72,8 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom" {
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
-      min = 9086
-      max = 9086
+      min = 8096
+      max = 8096
     }
   }
   stateless = false
