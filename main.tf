@@ -79,71 +79,29 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom" {
   stateless = false
 }
 
-# module "network_security" {
-#   source                  = "./Oracle/terraform-oci-tdf-network-security"
-#   default_compartment_id  = var.compartment_ocid
-#   vcn_id                  = module.oci_vcn.vcn_id
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30443" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = var.allowed_cidr
+  source_type               = "CIDR_BLOCK"
+  tcp_options {
+    destination_port_range {
+      min = 30443
+      max = 30443
+    }
+  }
+  stateless = false
+}
 
-#   nsgs = {
-#     "nsg-1" = {
-#       compartment_id = var.compartment_ocid
-#       display_name   = "Allow SSH"
-#       defined_tags   = {}
-#       freeform_tags  = {}
-#       egress_rules   = []
-#       ingress_rules  = [
-#         {
-#           description = "Allow SSH access"
-#           protocol    = "6"  # TCP
-#           src         = var.allowed_cidr
-#           src_type    = "CIDR_BLOCK"
-#           src_port    = null
-#           dst_port    = {
-#             min = 22
-#             max = 22
-#           }
-#           icmp_code   = null
-#           icmp_type   = null
-#           stateless   = false
-#         },
-#         {
-#           description = "Allow Kubernetes API server access"
-#           protocol    = "6"  # TCP
-#           src         = var.allowed_cidr
-#           src_type    = "CIDR_BLOCK"
-#           src_port    = null
-#           dst_port    = {
-#             min = 6443
-#             max = 6443
-#           }
-#           icmp_code   = null
-#           icmp_type   = null
-#           stateless   = false
-#         },
-#         {
-#           description = "Allow access to port 8096"
-#           protocol    = "6"  # TCP
-#           src         = var.allowed_cidr
-#           src_type    = "CIDR_BLOCK"
-#           src_port    = null
-#           dst_port    = {
-#             min = 8096
-#             max = 8096
-#           }
-#           icmp_code   = null
-#           icmp_type   = null
-#           stateless   = false
-#         }
-#       ]
-#     }
-#   }
-# }
+resource "oci_core_network_security_group_security_rule" "egress_rule_all" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "EGRESS"
+  protocol                  = "all"
+  destination               = "0.0.0.0/0"
+  destination_type          = "CIDR_BLOCK"
+  stateless                 = false
+}
 
-# resource "oci_core_vcn" "this" {
-#   dns_label             = null
-#   cidr_block            = var.vcn_cidrs[0]
-#   compartment_id        = var.compartment_ocid
-#   display_name          = var.vcn_label_prefix
-# }
 
 
