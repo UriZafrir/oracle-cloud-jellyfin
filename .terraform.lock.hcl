@@ -1,9 +1,9 @@
 # This file is maintained automatically by "tofu init".
 # Manual edits may be lost in future updates.
 
-provider "registry.opentofu.org/hashicorp/oci" {
+provider "registry.opentofu.org/oracle/oci" {
   version     = "6.26.0"
-  constraints = ">= 4.0.0"
+  constraints = ">= 4.0.0, >= 4.67.3"
   hashes = [
     "h1:LPSGm2gxQ1G2BALuCCTHSGE24YPOCcf9tAKft9KmYCA=",
     "zh:0dab28657af41472622e755206ad9472a70fe5219cd75e6130a8c0bb862b4147",

@@ -2,9 +2,12 @@ terraform {
   required_version = ">= 0.12.6"
   required_providers {
     oci = {
+      source  = "oracle/oci"
       version = ">= 4.0.0"
-      region="il-jerusalem-1"
     }
   }
+}
 
+provider "oci" {
+  region = "il-jerusalem-1"
 }
