@@ -6,7 +6,7 @@ module "instance" {
   subnet_ocids                = [module.oci_vcn.subnet_id["subnet1"]]
   public_ip                   = var.public_ip
   ssh_public_keys             = var.ssh_public_keys
-  block_storage_sizes_in_gbs  = [200]
+  block_storage_sizes_in_gbs  = [153]
   shape                       = var.shape
   instance_flex_memory_in_gbs = 24
   instance_flex_ocpus         = 4
