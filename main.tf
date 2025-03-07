@@ -197,6 +197,22 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   stateless = false
 }
 
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_8096_miriam" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = var.allowed_cidr_miriam
+  source_type               = "CIDR_BLOCK"
+  tcp_options {
+    destination_port_range {
+      min = 8096
+      max = 8920
+    }
+  }
+  stateless = false
+}
+
+
 resource "oci_core_network_security_group_security_rule" "egress_rule_all" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "EGRESS"
