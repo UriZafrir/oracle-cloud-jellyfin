@@ -14,7 +14,7 @@ spec:
         valuesObject:
           image:
             repository: docker.io/jellyfin/jellyfin
-            # tag: arm64v8-latest
+            tag: 10.10.6-arm64.20250216-215628
           service:
             type: NodePort
           persistence:
