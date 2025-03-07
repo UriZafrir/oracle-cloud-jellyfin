@@ -6,6 +6,8 @@ http://129.159.142.131:8096
 https://129.159.142.131:8920
 
 uri.work.gd
+
+freedomain.one
 oci session authenticate (region 40)
 oci session refresh --profile learn-terraform
 

@@ -143,6 +143,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_ssh" {
       max = 22
     }
   }
+  
   stateless = false
 }
 
@@ -173,6 +174,21 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
     destination_port_range {
       min = 8096
       max = 8920
+    }
+  }
+  stateless = false
+}
+
+resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80_443" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  tcp_options {
+    destination_port_range {
+      min = 80
+      max = 443
     }
   }
   stateless = false
