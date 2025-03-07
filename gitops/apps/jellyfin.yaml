@@ -27,6 +27,26 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-data
+          ingress:
+            # -- Expose the app using an ingress
+            enabled: true
+            # -- Ingress class name
+            className: "nginx"
+            # -- Annotations for the ingress
+            annotations:
+              cert-manager.io/cluster-issuer: "letsencrypt-prod"
+            # -- Ingress hosts configuration
+            # @default -- see [values.yaml](values.yaml)
+            hosts:
+              - host: uri.work.gd
+                paths:
+                  - path: /
+                    pathType: Prefix
+            # -- The TLS configuration for the Ingress
+            tls:
+            - hosts:
+              - uri.work.gd
+              secretName: jellyfin-tls
           hostPort:
             # -- Use host port for the application
             enabled: true
