@@ -120,11 +120,22 @@ resource "oci_core_network_security_group" "nsg-1" {
   display_name   = "nsg-1"
 }
 
+resource "oci_core_network_security_group_security_rule" "egress_rule_all" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "EGRESS"
+  protocol                  = "all"
+  destination               = "0.0.0.0/0"
+  destination_type          = "CIDR_BLOCK"
+  stateless                 = false
+}
+
+
+
 resource "oci_core_network_security_group_security_rule" "ingress_rule_ssh" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
-  source                    = var.allowed_cidr
+  source                    = var.allowed_cidr_uri
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
@@ -140,7 +151,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
-  source                    = var.allowed_cidr
+  source                    = var.allowed_cidr_uri
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
@@ -156,7 +167,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
-  source                    = var.allowed_cidr
+  source                    = var.allowed_cidr_uri
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
@@ -212,15 +223,6 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   stateless = false
 }
 
-
-resource "oci_core_network_security_group_security_rule" "egress_rule_all" {
-  network_security_group_id = oci_core_network_security_group.nsg-1.id
-  direction                 = "EGRESS"
-  protocol                  = "all"
-  destination               = "0.0.0.0/0"
-  destination_type          = "CIDR_BLOCK"
-  stateless                 = false
-}
 
 
 

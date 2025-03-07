@@ -160,6 +160,13 @@ resource "oci_core_instance" "instance" {
   timeouts {
     create = var.instance_timeout
   }
+      lifecycle {
+    ignore_changes = [
+      create_vnic_details[0].assign_public_ip,
+      preserve_boot_volume,
+      # Add other attributes you want to ignore
+    ]
+      }
 }
 
 ##################################
