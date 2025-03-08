@@ -36,6 +36,25 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-config
+          hostPort:
+            # -- Use host port for the application
+            enabled: true
+            # -- Host port to bind to
+            port: 8096
+          additionalPorts:
+            - name: tcp-8920
+              containerPort: 8920
+              protocol: TCP
+              hostPort: 8920
+          additionalServicePorts:
+            - name: tcp-8920
+              port: 8920
+              targetPort: 8920
+              protocol: TCP
+          # podSecurityContext:
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   fsGroup: 1000
           # ingress:
           #   # -- Expose the app using an ingress
           #   enabled: true
@@ -61,25 +80,9 @@ spec:
           #   - hosts:
           #     - uri.work.gd
           #     secretName: jellyfin-tls
-          hostPort:
-            # -- Use host port for the application
-            enabled: true
-            # -- Host port to bind to
-            port: 8096
-          additionalPorts:
-            - name: tcp-8920
-              containerPort: 8920
-              protocol: TCP
-              hostPort: 8920
-          additionalServicePorts:
-            - name: tcp-8920
-              port: 8920
-              targetPort: 8920
-              protocol: TCP
-          # podSecurityContext:
-          #   runAsUser: 1000
-          #   runAsGroup: 1000
-          #   fsGroup: 1000
+    - repoURL: https://github.com/UriZafrir/oracle-cloud-jellyfin.git
+      targetRevision: HEAD
+      path: gitops/extras/jellyfin
   destination:
     server: "https://kubernetes.default.svc"
     namespace: jellyfin
