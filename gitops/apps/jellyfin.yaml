@@ -27,6 +27,15 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-data
+            config:
+              # enabled: true
+              # storageClass: local-path
+              # size: 20Gi
+              enabled: true
+              isPvc: false
+              customVolume:
+                hostPath:
+                  path: /opt/jellyfin-config
           # ingress:
           #   # -- Expose the app using an ingress
           #   enabled: true
