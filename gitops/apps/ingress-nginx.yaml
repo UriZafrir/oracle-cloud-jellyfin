@@ -20,9 +20,9 @@ spec:
         controller:
           service:
             externalIPs: 129.159.142.131
-        hostPort:
-          # -- Enable 'hostPort' or not
-          enabled: true
+        # hostPort:
+        #   # -- Enable 'hostPort' or not
+        #   enabled: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ingress-nginx
