@@ -17,9 +17,9 @@ spec:
         # controller:
         #   service:
         #     type: NodePort
-        # controller:
-        #   service:
-        #     loadBalancerIP: 129.159.142.131
+        controller:
+          service:
+            externalIPs: 129.159.142.131
         hostPort:
           # -- Enable 'hostPort' or not
           enabled: true
