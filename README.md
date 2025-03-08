@@ -8,6 +8,8 @@ https://129.159.142.131:8920
 uri.work.gd
 
 freedomain.one
+
+curl -vvv http://uri.work.gd/.well-known/acme-challenge/bSOfjsIX3zzYBKhJxR_p18KUtMR9KZgO_p8psUfKE7A
 oci session authenticate (region 40)
 oci session refresh --profile learn-terraform
 

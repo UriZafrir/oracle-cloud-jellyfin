@@ -183,7 +183,7 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_80
   network_security_group_id = oci_core_network_security_group.nsg-1.id
   direction                 = "INGRESS"
   protocol                  = "6" # TCP
-  source                    = "0.0.0.0/0"
+  source                    = var.allowed_cidr_uri
   source_type               = "CIDR_BLOCK"
   tcp_options {
     destination_port_range {
