@@ -27,36 +27,36 @@ spec:
               customVolume:
                 hostPath:
                   path: /opt/jellyfin-data
-          ingress:
-            # -- Expose the app using an ingress
-            enabled: true
-            # -- Ingress class name
-            className: "nginx"
-            # -- Annotations for the ingress
-            annotations:
-              cert-manager.io/cluster-issuer: "letsencrypt-prod"
-            # -- Ingress hosts configuration
-            # @default -- see [values.yaml](values.yaml)
-            hosts:
-              - host: uri.work.gd
-                paths:
-                  - path: /
-                    pathType: Prefix
-                    backend:
-                      service:
-                        name: jellyfin
-                        port:
-                          number: 8096
-            # -- The TLS configuration for the Ingress
-            tls:
-            - hosts:
-              - uri.work.gd
-              secretName: jellyfin-tls
-          hostPort:
-            # -- Use host port for the application
-            enabled: true
-            # -- Host port to bind to
-            port: 8096
+          # ingress:
+          #   # -- Expose the app using an ingress
+          #   enabled: true
+          #   # -- Ingress class name
+          #   className: "nginx"
+          #   # -- Annotations for the ingress
+          #   annotations:
+          #     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+          #   # -- Ingress hosts configuration
+          #   # @default -- see [values.yaml](values.yaml)
+          #   hosts:
+          #     - host: uri.work.gd
+          #       paths:
+          #         - path: /
+          #           pathType: Prefix
+          #           backend:
+          #             service:
+          #               name: jellyfin
+          #               port:
+          #                 number: 8096
+          #   # -- The TLS configuration for the Ingress
+          #   tls:
+          #   - hosts:
+          #     - uri.work.gd
+          #     secretName: jellyfin-tls
+          # hostPort:
+          #   # -- Use host port for the application
+          #   enabled: true
+          #   # -- Host port to bind to
+          #   port: 8096
           additionalPorts:
             - name: tcp-8920
               containerPort: 8920
