@@ -20,10 +20,10 @@ spec:
         # controller:
         #   service:
         #     externalIPs: 129.159.142.131
-        controller:
-          hostNetwork: true
-          # kind: DaemonSet
-          dnsPolicy: ClusterFirstWithHostNet
+        # controller:
+        #   hostNetwork: true
+        #   kind: DaemonSet
+        #   dnsPolicy: ClusterFirstWithHostNet
           # hostPort:
           #   # -- Enable 'hostPort' or not
           #   enabled: true
