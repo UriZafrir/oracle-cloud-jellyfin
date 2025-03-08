@@ -14,9 +14,12 @@ spec:
     helm:
       releaseName: ingress-nginx
       valuesObject:
-        controller:
-          service:
-            type: NodePort
+        # controller:
+        #   service:
+        #     type: NodePort
+        hostPort:
+          # -- Enable 'hostPort' or not
+          enabled: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ingress-nginx
