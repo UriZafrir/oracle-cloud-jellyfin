@@ -42,6 +42,11 @@ spec:
                 paths:
                   - path: /
                     pathType: Prefix
+                    backend:
+                      service:
+                        name: jellyfin
+                        port:
+                          number: 8096
             # -- The TLS configuration for the Ingress
             tls:
             - hosts:
