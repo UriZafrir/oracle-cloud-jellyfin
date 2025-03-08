@@ -10,6 +10,11 @@ uri.work.gd
 freedomain.one
 
 curl -vvv http://uri.work.gd/.well-known/acme-challenge/bSOfjsIX3zzYBKhJxR_p18KUtMR9KZgO_p8psUfKE7A
+
+curl http://10.43.108.8:32307
+curl https://10.43.108.8:31160
+
+
 oci session authenticate (region 40)
 oci session refresh --profile learn-terraform
 
