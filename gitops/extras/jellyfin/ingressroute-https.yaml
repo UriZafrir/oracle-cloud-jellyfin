@@ -13,4 +13,4 @@ spec:
         - name: jellyfin
           port: 8096
   tls:
-    secretName: uri.work.gd-certificate
+    secretName: uri.work.gd-certificate-xq7k2
