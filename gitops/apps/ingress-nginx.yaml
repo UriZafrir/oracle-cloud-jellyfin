@@ -19,7 +19,8 @@ spec:
           kind: DaemonSet
           dnsPolicy: ClusterFirstWithHostNet
           service:
-            type: ""
+            # -- Enable controller services or not. This does not influence the creation of either the admission webhook or the metrics service.
+            enabled: false
 
   destination:
     server: "https://kubernetes.default.svc"
