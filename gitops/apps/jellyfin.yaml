@@ -58,7 +58,7 @@ spec:
             className: "nginx"
             # -- Annotations for the ingress
             annotations:
-              cert-manager.io/cluster-issuer: "letsencrypt-prod"
+              # cert-manager.io/cluster-issuer: "letsencrypt-prod"
             # -- Ingress hosts configuration
             # @default -- see [values.yaml](values.yaml)
             hosts:
