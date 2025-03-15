@@ -1,16 +1,16 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: ingressroute-https-jellyfin
-  namespace: jellyfin
-spec:
-  entryPoints:
-    - websecure # This corresponds to port 80 (HTTP)
-  routes:
-    - match: Host(`uri.work.gd`) && PathPrefix(`/`)
-      kind: Rule
-      services:
-        - name: jellyfin
-          port: 8096
-  tls:
-    secretName: uri.work.gd-certificate-xq7k2
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: ingressroute-https-jellyfin
+#   namespace: jellyfin
+# spec:
+#   entryPoints:
+#     - websecure # This corresponds to port 80 (HTTP)
+#   routes:
+#     - match: Host(`uri.work.gd`) && PathPrefix(`/`)
+#       kind: Rule
+#       services:
+#         - name: jellyfin
+#           port: 8096
+#   tls:
+#     secretName: uri.work.gd-certificate-xq7k2
