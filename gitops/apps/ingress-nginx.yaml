@@ -18,8 +18,10 @@ spec:
           hostNetwork: true
           kind: DaemonSet
           dnsPolicy: ClusterFirstWithHostNet
-          hostPort:
-            enabled: true
+          # hostPort:
+          #   enabled: true
+          service:
+            type: ClusterIP
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ingress-nginx
