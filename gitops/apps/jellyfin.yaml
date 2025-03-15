@@ -72,10 +72,10 @@ spec:
                         port:
                           number: 8096
             # -- The TLS configuration for the Ingress
-            tls:
-            - hosts:
-              - uri.work.gd
-              secretName: jellyfin-tls
+            # tls:
+            # - hosts:
+            #   - uri.work.gd
+            #   secretName: jellyfin-tls
     # - repoURL: https://github.com/UriZafrir/oracle-cloud-jellyfin.git
     #   targetRevision: HEAD
     #   path: gitops/extras/jellyfin
