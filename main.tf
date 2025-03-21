@@ -147,21 +147,21 @@ resource "oci_core_network_security_group_security_rule" "ingress_rule_ssh" {
   stateless = false
 }
 
-# resource "oci_core_network_security_group_security_rule" "ingress_rule_http" {
-#   network_security_group_id = oci_core_network_security_group.nsg-1.id
-#   direction                 = "INGRESS"
-#   protocol                  = "6" # TCP
-#   source                    = "0.0.0.0/0"
-#   source_type               = "CIDR_BLOCK"
-#   tcp_options {
-#     destination_port_range {
-#       min = 80
-#       max = 80
-#     }
-#   }
+resource "oci_core_network_security_group_security_rule" "ingress_rule_http" {
+  network_security_group_id = oci_core_network_security_group.nsg-1.id
+  direction                 = "INGRESS"
+  protocol                  = "6" # TCP
+  source                    = "0.0.0.0/0"
+  source_type               = "CIDR_BLOCK"
+  tcp_options {
+    destination_port_range {
+      min = 80
+      max = 80
+    }
+  }
   
-#   stateless = false
-# }
+  stateless = false
+}
 
 resource "oci_core_network_security_group_security_rule" "ingress_rule_custom_30443" {
   network_security_group_id = oci_core_network_security_group.nsg-1.id
