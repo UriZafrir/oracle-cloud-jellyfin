@@ -74,7 +74,7 @@ spec:
             # -- The TLS configuration for the Ingress
             tls:
             - hosts:
-              - uri.work.gd
+              - uri1.zone.id
               secretName: jellyfin-tls
     # - repoURL: https://github.com/UriZafrir/oracle-cloud-jellyfin.git
     #   targetRevision: HEAD
