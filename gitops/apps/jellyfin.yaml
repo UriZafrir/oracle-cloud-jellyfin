@@ -62,7 +62,7 @@ spec:
             # -- Ingress hosts configuration
             # @default -- see [values.yaml](values.yaml)
             hosts:
-              - host: uri.work.gd
+              - host: uri1.zone.id
                 paths:
                   - path: /
                     pathType: Prefix
