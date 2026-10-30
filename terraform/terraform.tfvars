@@ -7,11 +7,12 @@ vcn_label_prefix = "vcn-1"
 
 
 instance_display_name      = "vm-1"
-source_ocid               = "ocid1.image.oc1.il-jerusalem-1.aaaaaaaarfbyqpygklco7cm5nicpl2zdvgef3h6eqqovbvxtiwdwngovy4da"
+# Ubuntu 24.04 LTS (aarch64) - Canonical-Ubuntu-24.04-aarch64-2026.10.27-0
+source_ocid               = "ocid1.image.oc1.il-jerusalem-1.aaaaaaaa5rc2meh5sevkgqnquizgw4gk5ektjyp36cxhtwwvyk33lqqtywra"
 public_ip                 = "EPHEMERAL"
 ssh_public_keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILYOdRfDAL8eRFNPd3b0RbpNNbi0JuWqv0nOMFRlBbtL uri@uri-ThinkPad-E14-Gen-7"
 shape                     = "VM.Standard.A1.Flex"
 
-allowed_cidr_uri = "87.68.252.77/32"
+allowed_cidr_uri = "87.68.252.134/32"
 
 
