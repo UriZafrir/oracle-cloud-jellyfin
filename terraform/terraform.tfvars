@@ -4,17 +4,14 @@ compartment_ocid = "ocid1.tenancy.oc1..aaaaaaaa66wkuhn3lioj44arbaokoeukfjlnt2njq
 tenancy_id       = "ocid1.tenancy.oc1..aaaaaaaa66wkuhn3lioj44arbaokoeukfjlnt2njqghj52faoaganmsfl35a"
 user_ocid = "ocid1.user.oc1..aaaaaaaablgybdsk4lpod3ntahqrpfhdb3dvwlxeu4i4e4fw6lforfysrw6a"
 vcn_label_prefix = "vcn-1"
-vcn_cidrs        = ["10.0.0.0/23"]
 
 
 instance_display_name      = "vm-1"
 source_ocid               = "ocid1.image.oc1.il-jerusalem-1.aaaaaaaarfbyqpygklco7cm5nicpl2zdvgef3h6eqqovbvxtiwdwngovy4da"
 public_ip                 = "EPHEMERAL"
-ssh_public_keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICjfyR0TesyI0zSn92lLgsjTzTTkL8Ox9rBDKX/JThah urizaf@gmail.com"
+ssh_public_keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILYOdRfDAL8eRFNPd3b0RbpNNbi0JuWqv0nOMFRlBbtL uri@uri-ThinkPad-E14-Gen-7"
 shape                     = "VM.Standard.A1.Flex"
 
-allowed_cidr_uri = "87.68.252.77/32"  # Replace with your specific IP/CIDR for better security
-allowed_cidr_doron = "89.139.22.147/32"
-allowed_cidr_miriam = "46.121.169.92/32"
-allowed_cidr_shira = "77.125.195.34/32"
+allowed_cidr_uri = "87.68.252.77/32"
+
 

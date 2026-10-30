@@ -1,5 +1,5 @@
 module "instance" {
-  source                      = "./modules/oracleterraform-oci-compute-instance"
+  source                      = "./modules/oracle/terraform-oci-compute-instance"
   compartment_ocid            = var.compartment_ocid
   instance_display_name       = var.instance_display_name
   source_ocid                 = var.source_ocid
@@ -16,11 +16,11 @@ module "instance" {
 
 
 module "oci_vcn" {
-  source                  = "./modules/oracleterraform-oci-vcn"
+  source                  = "./modules/oracle/terraform-oci-vcn"
   tenancy_id              = var.tenancy_id
   compartment_id          = var.compartment_ocid
   label_prefix            = var.vcn_label_prefix
-  vcn_cidrs               = var.vcn_cidrs
+  vcn_cidrs               = 10.1.0.0/23
   create_internet_gateway = true
 
   subnets = {
