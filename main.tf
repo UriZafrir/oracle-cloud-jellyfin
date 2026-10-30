@@ -24,8 +24,8 @@ module "oci_vcn" {
   create_internet_gateway = true
 
   subnets = {
-    sub1 = { name = "subnet1", cidr_block = "10.0.0.0/24" }
-    sub2 = { name = "subnet2", cidr_block = "10.0.1.0/24" }
+    sub1 = { name = "subnet1", cidr_block = "10.1.0.0/24" }
+    sub2 = { name = "subnet2", cidr_block = "10.1.1.0/24" }
   }
 }
 
