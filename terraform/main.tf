@@ -20,12 +20,12 @@ module "oci_vcn" {
   tenancy_id              = var.tenancy_id
   compartment_id          = var.compartment_ocid
   label_prefix            = var.vcn_label_prefix
-  vcn_cidrs               = 10.1.0.0/23
+  vcn_cidrs               = ["10.1.0.0/23"]
   create_internet_gateway = true
 
   subnets = {
-    sub1 = { name = "subnet1", cidr_block = "10.1.0.0/24" }
-    sub2 = { name = "subnet2", cidr_block = "10.1.1.0/24" }
+    sub1 = { name = "subnet1", ipv4cidr_blocks = ["10.1.0.0/24"], prohibit_internet_ingress = false }
+    sub2 = { name = "subnet2", ipv4cidr_blocks = ["10.1.1.0/24"], prohibit_internet_ingress = false }
   }
 }
 
