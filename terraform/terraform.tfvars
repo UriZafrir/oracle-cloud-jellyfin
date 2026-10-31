@@ -13,6 +13,6 @@ public_ip                 = "EPHEMERAL"
 ssh_public_keys           = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILYOdRfDAL8eRFNPd3b0RbpNNbi0JuWqv0nOMFRlBbtL uri@uri-ThinkPad-E14-Gen-7"
 shape                     = "VM.Standard.A1.Flex"
 
-allowed_cidr_uri = "87.68.252.134/32"
+allowed_cidr_uri = "87.68.252.135/32"
 
 
